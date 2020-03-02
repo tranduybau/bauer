@@ -11,10 +11,10 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
    ** Customize the progress-bar color
@@ -33,14 +33,16 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/tailwindcss',
   ],
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/firebase',
   ],
   /*
    ** Axios module configuration
@@ -55,6 +57,31 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
-  }
+    extend(config, ctx) {},
+  },
+  firebase: {
+    config: {
+      production: {
+        apiKey: 'AIzaSyCQjHXG1yIHDkDI-NwuXKlxqHUzgOZY4eg',
+        authDomain: 'bauerwebblog-4b784.firebaseapp.com',
+        databaseURL: 'https://bauerwebblog-4b784.firebaseio.com',
+        projectId: 'bauerwebblog-4b784',
+        storageBucket: 'bauerwebblog-4b784.appspot.com',
+        messagingSenderId: '364685114936',
+        appId: '1:364685114936:web:233803a49fbb2b65df70cd',
+        measurementId: 'G-NPP0WKF511',
+      },
+      development: {
+        apiKey: 'AIzaSyCQjHXG1yIHDkDI-NwuXKlxqHUzgOZY4eg',
+        authDomain: 'bauerwebblog-4b784.firebaseapp.com',
+        databaseURL: 'https://bauerwebblog-4b784.firebaseio.com',
+        projectId: 'bauerwebblog-4b784',
+        storageBucket: 'bauerwebblog-4b784.appspot.com',
+        messagingSenderId: '364685114936',
+        appId: '1:364685114936:web:233803a49fbb2b65df70cd',
+        measurementId: 'G-NPP0WKF511',
+      },
+    },
+    customEnv: false,
+  },
 }
