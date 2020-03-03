@@ -1,8 +1,5 @@
 export default {
   mode: 'universal',
-  /*
-   ** Headers of the page
-   */
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -16,72 +13,43 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  /*
-   ** Customize the progress-bar color
-   */
   loading: { color: '#fff' },
-  /*
-   ** Global CSS
-   */
   css: ['element-ui/lib/theme-chalk/index.css'],
-  /*
-   ** Plugins to load before mounting the App
-   */
   plugins: ['@/plugins/element-ui'],
-  /*
-   ** Nuxt.js dev-modules
-   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
   ],
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/firebase',
-  ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
+  modules: ['@nuxtjs/axios', '@nuxtjs/firebase'],
   axios: {},
-  /*
-   ** Build configuration
-   */
   build: {
     transpile: [/^element-ui/],
-    /*
-     ** You can extend webpack config here
-     */
     extend(config, ctx) {},
   },
   firebase: {
     config: {
-      production: {
-        apiKey: 'AIzaSyCQjHXG1yIHDkDI-NwuXKlxqHUzgOZY4eg',
-        authDomain: 'bauerwebblog-4b784.firebaseapp.com',
-        databaseURL: 'https://bauerwebblog-4b784.firebaseio.com',
-        projectId: 'bauerwebblog-4b784',
-        storageBucket: 'bauerwebblog-4b784.appspot.com',
-        messagingSenderId: '364685114936',
-        appId: '1:364685114936:web:233803a49fbb2b65df70cd',
-        measurementId: 'G-NPP0WKF511',
-      },
-      development: {
-        apiKey: 'AIzaSyCQjHXG1yIHDkDI-NwuXKlxqHUzgOZY4eg',
-        authDomain: 'bauerwebblog-4b784.firebaseapp.com',
-        databaseURL: 'https://bauerwebblog-4b784.firebaseio.com',
-        projectId: 'bauerwebblog-4b784',
-        storageBucket: 'bauerwebblog-4b784.appspot.com',
-        messagingSenderId: '364685114936',
-        appId: '1:364685114936:web:233803a49fbb2b65df70cd',
-        measurementId: 'G-NPP0WKF511',
+      apiKey: 'AIzaSyApiiF3U_eR1SrxIvIRx6MTGfLmG7wO1-g',
+      authDomain: 'bauer-web-blog.firebaseapp.com',
+      databaseURL: 'https://bauer-web-blog.firebaseio.com',
+      projectId: 'bauer-web-blog',
+      storageBucket: 'bauer-web-blog.appspot.com',
+      messagingSenderId: '192792860070',
+      appId: '1:192792860070:web:ffd11794085dd7ff5d6b67',
+      measurementId: 'G-3JW2QXRSEM',
+    },
+    services: {
+      services: {
+        auth: true,
+        firestore: true,
+        functions: true,
+        storage: true,
+        realtimeDb: true,
+        messaging: true,
+        performance: true,
+        analytics: true,
+        remoteConfig: true,
       },
     },
-    customEnv: false,
   },
 }
