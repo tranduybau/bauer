@@ -15,9 +15,6 @@
       </div>
 
       <el-form-item prop="username">
-        <span class="svg-container">
-          <svg-icon icon-class="user" />
-        </span>
         <el-input
           v-model="loginForm.username"
           :placeholder="username"
@@ -28,26 +25,19 @@
       </el-form-item>
 
       <el-form-item prop="password">
-        <span class="svg-container">
-          <svg-icon icon-class="password" />
-        </span>
         <el-input
           v-model="loginForm.password"
-          :type="passwordType"
+          :type="loginForm.passwordType"
           :placeholder="password"
           @keyup.enter.native="handleLogin"
           name="password"
           auto-complete="on"
         />
-        <span @click="showPwd" class="show-pwd">
-          <svg-icon
-            :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'"
-          />
-        </span>
+        <span @click="showPwd" class="show-pwd">asd</span>
       </el-form-item>
 
       <el-button
-        :loading="loading"
+        :loading="loginForm.loading"
         @click.native.prevent="handleLogin"
         type="primary"
         style="width:100%;margin-bottom:30px;"
@@ -67,6 +57,9 @@ export default {
   methods: {
     showPwd() {
       return this.passwordType === 'password' ? 'text' : 'password'
+    },
+    handleLogin() {
+      console.log(this.loginForm)
     },
   },
 }

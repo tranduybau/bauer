@@ -5,6 +5,7 @@ const formValidator = {
         username: '',
         password: '',
         passwordType: 'password',
+        loading: false,
       },
       loginRules: {
         username: [
