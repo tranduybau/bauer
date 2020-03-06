@@ -15,12 +15,8 @@ export default {
   },
   loading: { color: '#fff' },
   css: ['element-ui/lib/theme-chalk/index.css'],
-  plugins: ['@/plugins/element-ui'],
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/tailwindcss',
-  ],
+  plugins: ['@/plugins/element-ui', { src: '@/plugins/vue-icon', ssr: false }],
+  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/tailwindcss'],
   modules: ['@nuxtjs/axios', '@nuxtjs/firebase'],
   axios: {},
   build: {

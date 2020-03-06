@@ -1,5 +1,7 @@
 <template>
-  <div class="login-container">
+  <div
+    class="login-container h-screen w-screen flex items-center justify-center bg-gray-900 text-gray-100"
+  >
     <el-form
       ref="loginForm"
       :model="loginForm"
@@ -8,16 +10,14 @@
       auto-complete="on"
       label-position="left"
     >
-      <div class="title-container">
-        <h3 class="title">
-          LOGIN
-        </h3>
-      </div>
+      <h3>
+        LOGIN FORM
+      </h3>
 
       <el-form-item prop="username">
         <el-input
           v-model="loginForm.username"
-          :placeholder="username"
+          placeholder="username"
           name="username"
           type="text"
           auto-complete="on"
@@ -28,8 +28,8 @@
         <el-input
           v-model="loginForm.password"
           :type="loginForm.passwordType"
-          :placeholder="password"
           @keyup.enter.native="handleLogin"
+          placeholder="password"
           name="password"
           auto-complete="on"
         />
@@ -65,4 +65,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.login-form {
+}
+</style>
