@@ -1,6 +1,6 @@
 <template>
   <div
-    class="login-container h-screen w-screen flex items-center justify-center bg-gray-900 text-gray-100"
+    class="login-container h-screen w-screen flex items-center justify-center bg-gray-800 text-gray-100"
   >
     <el-form
       ref="loginForm"
@@ -10,9 +10,21 @@
       auto-complete="on"
       label-position="left"
     >
-      <h3>
+      <h3 class="font-bold my-6 text-5xl">
         LOGIN FORM
       </h3>
+      <client-only>
+        <vue-material-icon
+          :size="32"
+          :name="
+            loginForm.passwordType === 'password'
+              ? 'visibility'
+              : 'unvisibility'
+          "
+          @click="showPwd"
+          color="white"
+        />
+      </client-only>
 
       <el-form-item prop="username">
         <el-input
@@ -56,7 +68,9 @@ export default {
   mixins: [formValidator],
   methods: {
     showPwd() {
-      return this.passwordType === 'password' ? 'text' : 'password'
+      if (this.loginForm.passwordType === 'password')
+        this.loginForm.passwordType = 'text'
+      else this.loginForm.passwordType = 'password'
     },
     handleLogin() {
       console.log(this.loginForm)
@@ -67,5 +81,6 @@ export default {
 
 <style lang="scss" scoped>
 .login-form {
+  @apply max-w-md w-full;
 }
 </style>
